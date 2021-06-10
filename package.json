@@ -1,0 +1,43 @@
+{
+  "name": "prototype",
+  "version": "1.0.5",
+  "description": "proyecto prototipo para necesidades laborales",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon --exec babel-node src/app.js",
+    "build": "babel src -d dist",
+    "start": "node dist/app.js",
+    "lint": "eslint -c .eslintrc.js src/* --fix"
+  },
+  "author": "CP",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.9",
+    "cookie-parser": "^1.4.5",
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-ejs-layouts": "^2.5.0",
+    "express-session": "^1.17.2",
+    "morgan": "^1.7.0",
+    "sequelize": "^3.28.0",
+    "sequelize-cli": "^2.5.1",
+    "sequelize-msnodesqlv8": "^0.2.6-beta.8",
+    "url-breadcrumb": "^1.0.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.14.3",
+    "@babel/core": "^7.14.3",
+    "@babel/node": "^7.14.2",
+    "@babel/preset-env": "^7.14.4",
+    "@babel/runtime": "^7.14.0",
+    "eslint": "^7.28.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-prettier": "^3.4.0",
+    "nodemon": "^2.0.7",
+    "prettier": "^2.3.1"
+  }
+}

@@ -1,0 +1,394 @@
+<div class="intro-y flex flex-col sm:flex-row items-center mt-8">
+    <h2 class="text-lg font-medium mr-auto">
+        Blog Layout
+    </h2>
+    <div class="w-full sm:w-auto flex mt-4 sm:mt-0">
+        <button class="btn btn-primary shadow-md mr-2">Add New Post</button>
+        <div class="dropdown ml-auto sm:ml-0">
+            <button class="dropdown-toggle btn px-2 box text-gray-700 dark:text-gray-300" aria-expanded="false">
+                <span class="w-5 h-5 flex items-center justify-center"> <i class="w-4 h-4" data-feather="plus"></i> </span>
+            </button>
+            <div class="dropdown-menu w-40">
+                <div class="dropdown-menu__content box dark:bg-dark-1 p-2">
+                    <a href="" class="flex items-center block p-2 transition duration-300 ease-in-out bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md"> <i data-feather="share-2" class="w-4 h-4 mr-2"></i> Share Post </a>
+                    <a href="" class="flex items-center block p-2 transition duration-300 ease-in-out bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md"> <i data-feather="download" class="w-4 h-4 mr-2"></i> Download Post </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="intro-y grid grid-cols-12 gap-6 mt-5">
+    <!-- BEGIN: Blog Layout -->
+    <div class="intro-y blog col-span-12 md:col-span-6 box">
+        <div class="blog__preview image-fit">
+            <img alt="Tinker Tailwind HTML Admin Template" class="rounded-t-md" src="/dist/images/preview-8.jpg">
+            <div class="absolute w-full flex items-center px-5 pt-6 z-10">
+                <div class="w-10 h-10 flex-none image-fit">
+                    <img alt="Tinker Tailwind HTML Admin Template" class="rounded-full" src="/dist/images/profile-8.jpg">
+                </div>
+                <div class="ml-3 text-white mr-auto">
+                    <a href="" class="font-medium">Denzel Washington</a>
+                    <div class="text-xs mt-0.5">22 hours ago</div>
+                </div>
+                <div class="dropdown ml-3">
+                    <a href="javascript:;" class="blog__action dropdown-toggle w-8 h-8 flex items-center justify-center rounded-full" aria-expanded="false"> <i data-feather="more-vertical" class="w-4 h-4 text-white"></i> </a>
+                    <div class="dropdown-menu w-40">
+                        <div class="dropdown-menu__content box dark:bg-dark-1 p-2">
+                            <a href="" class="flex items-center block p-2 transition duration-300 ease-in-out bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md"> <i data-feather="edit-2" class="w-4 h-4 mr-2"></i> Edit Post </a>
+                            <a href="" class="flex items-center block p-2 transition duration-300 ease-in-out bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md"> <i data-feather="trash" class="w-4 h-4 mr-2"></i> Delete Post </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="absolute bottom-0 text-white px-5 pb-6 z-10"> <span class="blog__category px-2 py-1 rounded">Photography</span> <a href="" class="block font-medium text-xl mt-3">Desktop publishing software like Aldus PageMaker</a> </div>
+        </div>
+        <div class="p-5 text-gray-700 dark:text-gray-600">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#039;s standard dummy text ever since the 1500</div>
+        <div class="flex items-center px-5 py-3 border-t border-gray-200 dark:border-dark-5">
+            <a href="" class="intro-x w-8 h-8 flex items-center justify-center rounded-full border border-gray-400 dark:border-dark-5 dark:bg-dark-5 dark:text-gray-300 text-gray-600 mr-2 tooltip" title="Bookmark"> <i data-feather="bookmark" class="w-3 h-3"></i> </a>
+            <div class="intro-x flex mr-2">
+                <div class="intro-x w-8 h-8 image-fit">
+                    <img alt="Tinker Tailwind HTML Admin Template" class="rounded-full border border-white zoom-in tooltip" src="/dist/images/profile-8.jpg" title="Denzel Washington">
+                </div>
+                <div class="intro-x w-8 h-8 image-fit -ml-4">
+                    <img alt="Tinker Tailwind HTML Admin Template" class="rounded-full border border-white zoom-in tooltip" src="/dist/images/profile-2.jpg" title="Vin Diesel">
+                </div>
+                <div class="intro-x w-8 h-8 image-fit -ml-4">
+                    <img alt="Tinker Tailwind HTML Admin Template" class="rounded-full border border-white zoom-in tooltip" src="/dist/images/profile-9.jpg" title="Matt Damon">
+                </div>
+            </div>
+            <a href="" class="intro-x w-8 h-8 flex items-center justify-center rounded-full bg-theme-19 dark:bg-dark-5 dark:text-gray-300 text-theme-22 ml-auto tooltip" title="Share"> <i data-feather="share-2" class="w-3 h-3"></i> </a>
+            <a href="" class="intro-x w-8 h-8 flex items-center justify-center rounded-full bg-theme-25 text-white ml-2 tooltip" title="Download PDF"> <i data-feather="share" class="w-3 h-3"></i> </a>
+        </div>
+        <div class="px-5 pt-3 pb-5 border-t border-gray-200 dark:border-dark-5">
+            <div class="w-full flex text-gray-600 text-xs sm:text-sm">
+                <div class="mr-2"> Comments: <span class="font-medium">95</span> </div>
+                <div class="mr-2"> Views: <span class="font-medium">33k</span> </div>
+                <div class="ml-auto"> Likes: <span class="font-medium">84k</span> </div>
+            </div>
+            <div class="w-full flex items-center mt-3">
+                <div class="w-8 h-8 flex-none image-fit mr-3">
+                    <img alt="Tinker Tailwind HTML Admin Template" class="rounded-full" src="/dist/images/profile-8.jpg">
+                </div>
+                <div class="flex-1 relative text-gray-700 dark:text-gray-300">
+                    <input type="text" class="form-control form-control-rounded border-transparent bg-gray-200 pr-10 placeholder-theme-13" placeholder="Post a comment...">
+                    <i data-feather="smile" class="w-4 h-4 absolute my-auto inset-y-0 mr-3 right-0"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="intro-y blog col-span-12 md:col-span-6 box">
+        <div class="blog__preview image-fit">
+            <img alt="Tinker Tailwind HTML Admin Template" class="rounded-t-md" src="/dist/images/preview-4.jpg">
+            <div class="absolute w-full flex items-center px-5 pt-6 z-10">
+                <div class="w-10 h-10 flex-none image-fit">
+                    <img alt="Tinker Tailwind HTML Admin Template" class="rounded-full" src="/dist/images/profile-14.jpg">
+                </div>
+                <div class="ml-3 text-white mr-auto">
+                    <a href="" class="font-medium">Arnold Schwarzenegger</a>
+                    <div class="text-xs mt-0.5">41 seconds ago</div>
+                </div>
+                <div class="dropdown ml-3">
+                    <a href="javascript:;" class="blog__action dropdown-toggle w-8 h-8 flex items-center justify-center rounded-full" aria-expanded="false"> <i data-feather="more-vertical" class="w-4 h-4 text-white"></i> </a>
+                    <div class="dropdown-menu w-40">
+                        <div class="dropdown-menu__content box dark:bg-dark-1 p-2">
+                            <a href="" class="flex items-center block p-2 transition duration-300 ease-in-out bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md"> <i data-feather="edit-2" class="w-4 h-4 mr-2"></i> Edit Post </a>
+                            <a href="" class="flex items-center block p-2 transition duration-300 ease-in-out bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md"> <i data-feather="trash" class="w-4 h-4 mr-2"></i> Delete Post </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="absolute bottom-0 text-white px-5 pb-6 z-10"> <span class="blog__category px-2 py-1 rounded">Photography</span> <a href="" class="block font-medium text-xl mt-3">Desktop publishing software like Aldus PageMaker</a> </div>
+        </div>
+        <div class="p-5 text-gray-700 dark:text-gray-600">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#039;s standard dummy text ever since the 1500</div>
+        <div class="flex items-center px-5 py-3 border-t border-gray-200 dark:border-dark-5">
+            <a href="" class="intro-x w-8 h-8 flex items-center justify-center rounded-full border border-gray-400 dark:border-dark-5 dark:bg-dark-5 dark:text-gray-300 text-gray-600 mr-2 tooltip" title="Bookmark"> <i data-feather="bookmark" class="w-3 h-3"></i> </a>
+            <div class="intro-x flex mr-2">
+                <div class="intro-x w-8 h-8 image-fit">
+                    <img alt="Tinker Tailwind HTML Admin Template" class="rounded-full border border-white zoom-in tooltip" src="/dist/images/profile-14.jpg" title="Arnold Schwarzenegger">
+                </div>
+                <div class="intro-x w-8 h-8 image-fit -ml-4">
+                    <img alt="Tinker Tailwind HTML Admin Template" class="rounded-full border border-white zoom-in tooltip" src="/dist/images/profile-3.jpg" title="Edward Norton">
+                </div>
+                <div class="intro-x w-8 h-8 image-fit -ml-4">
+                    <img alt="Tinker Tailwind HTML Admin Template" class="rounded-full border border-white zoom-in tooltip" src="/dist/images/profile-1.jpg" title="Sean Connery">
+                </div>
+            </div>
+            <a href="" class="intro-x w-8 h-8 flex items-center justify-center rounded-full bg-theme-19 dark:bg-dark-5 dark:text-gray-300 text-theme-22 ml-auto tooltip" title="Share"> <i data-feather="share-2" class="w-3 h-3"></i> </a>
+            <a href="" class="intro-x w-8 h-8 flex items-center justify-center rounded-full bg-theme-25 text-white ml-2 tooltip" title="Download PDF"> <i data-feather="share" class="w-3 h-3"></i> </a>
+        </div>
+        <div class="px-5 pt-3 pb-5 border-t border-gray-200 dark:border-dark-5">
+            <div class="w-full flex text-gray-600 text-xs sm:text-sm">
+                <div class="mr-2"> Comments: <span class="font-medium">30</span> </div>
+                <div class="mr-2"> Views: <span class="font-medium">41k</span> </div>
+                <div class="ml-auto"> Likes: <span class="font-medium">108k</span> </div>
+            </div>
+            <div class="w-full flex items-center mt-3">
+                <div class="w-8 h-8 flex-none image-fit mr-3">
+                    <img alt="Tinker Tailwind HTML Admin Template" class="rounded-full" src="/dist/images/profile-14.jpg">
+                </div>
+                <div class="flex-1 relative text-gray-700 dark:text-gray-300">
+                    <input type="text" class="form-control form-control-rounded border-transparent bg-gray-200 pr-10 placeholder-theme-13" placeholder="Post a comment...">
+                    <i data-feather="smile" class="w-4 h-4 absolute my-auto inset-y-0 mr-3 right-0"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="intro-y blog col-span-12 md:col-span-6 box">
+        <div class="blog__preview image-fit">
+            <img alt="Tinker Tailwind HTML Admin Template" class="rounded-t-md" src="/dist/images/preview-15.jpg">
+            <div class="absolute w-full flex items-center px-5 pt-6 z-10">
+                <div class="w-10 h-10 flex-none image-fit">
+                    <img alt="Tinker Tailwind HTML Admin Template" class="rounded-full" src="/dist/images/profile-7.jpg">
+                </div>
+                <div class="ml-3 text-white mr-auto">
+                    <a href="" class="font-medium">Robert De Niro</a>
+                    <div class="text-xs mt-0.5">18 hours ago</div>
+                </div>
+                <div class="dropdown ml-3">
+                    <a href="javascript:;" class="blog__action dropdown-toggle w-8 h-8 flex items-center justify-center rounded-full" aria-expanded="false"> <i data-feather="more-vertical" class="w-4 h-4 text-white"></i> </a>
+                    <div class="dropdown-menu w-40">
+                        <div class="dropdown-menu__content box dark:bg-dark-1 p-2">
+                            <a href="" class="flex items-center block p-2 transition duration-300 ease-in-out bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md"> <i data-feather="edit-2" class="w-4 h-4 mr-2"></i> Edit Post </a>
+                            <a href="" class="flex items-center block p-2 transition duration-300 ease-in-out bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md"> <i data-feather="trash" class="w-4 h-4 mr-2"></i> Delete Post </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="absolute bottom-0 text-white px-5 pb-6 z-10"> <span class="blog__category px-2 py-1 rounded">Electronic</span> <a href="" class="block font-medium text-xl mt-3">200 Latin words, combined with a handful of model sentences</a> </div>
+        </div>
+        <div class="p-5 text-gray-700 dark:text-gray-600">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomi</div>
+        <div class="flex items-center px-5 py-3 border-t border-gray-200 dark:border-dark-5">
+            <a href="" class="intro-x w-8 h-8 flex items-center justify-center rounded-full border border-gray-400 dark:border-dark-5 dark:bg-dark-5 dark:text-gray-300 text-gray-600 mr-2 tooltip" title="Bookmark"> <i data-feather="bookmark" class="w-3 h-3"></i> </a>
+            <div class="intro-x flex mr-2">
+                <div class="intro-x w-8 h-8 image-fit">
+                    <img alt="Tinker Tailwind HTML Admin Template" class="rounded-full border border-white zoom-in tooltip" src="/dist/images/profile-7.jpg" title="Robert De Niro">
+                </div>
+                <div class="intro-x w-8 h-8 image-fit -ml-4">
+                    <img alt="Tinker Tailwind HTML Admin Template" class="rounded-full border border-white zoom-in tooltip" src="/dist/images/profile-4.jpg" title="Tom Cruise">
+                </div>
+                <div class="intro-x w-8 h-8 image-fit -ml-4">
+                    <img alt="Tinker Tailwind HTML Admin Template" class="rounded-full border border-white zoom-in tooltip" src="/dist/images/profile-1.jpg" title="Charlize Theron">
+                </div>
+            </div>
+            <a href="" class="intro-x w-8 h-8 flex items-center justify-center rounded-full bg-theme-19 dark:bg-dark-5 dark:text-gray-300 text-theme-22 ml-auto tooltip" title="Share"> <i data-feather="share-2" class="w-3 h-3"></i> </a>
+            <a href="" class="intro-x w-8 h-8 flex items-center justify-center rounded-full bg-theme-25 text-white ml-2 tooltip" title="Download PDF"> <i data-feather="share" class="w-3 h-3"></i> </a>
+        </div>
+        <div class="px-5 pt-3 pb-5 border-t border-gray-200 dark:border-dark-5">
+            <div class="w-full flex text-gray-600 text-xs sm:text-sm">
+                <div class="mr-2"> Comments: <span class="font-medium">93</span> </div>
+                <div class="mr-2"> Views: <span class="font-medium">30k</span> </div>
+                <div class="ml-auto"> Likes: <span class="font-medium">99k</span> </div>
+            </div>
+            <div class="w-full flex items-center mt-3">
+                <div class="w-8 h-8 flex-none image-fit mr-3">
+                    <img alt="Tinker Tailwind HTML Admin Template" class="rounded-full" src="/dist/images/profile-7.jpg">
+                </div>
+                <div class="flex-1 relative text-gray-700 dark:text-gray-300">
+                    <input type="text" class="form-control form-control-rounded border-transparent bg-gray-200 pr-10 placeholder-theme-13" placeholder="Post a comment...">
+                    <i data-feather="smile" class="w-4 h-4 absolute my-auto inset-y-0 mr-3 right-0"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="intro-y blog col-span-12 md:col-span-6 box">
+        <div class="blog__preview image-fit">
+            <img alt="Tinker Tailwind HTML Admin Template" class="rounded-t-md" src="/dist/images/preview-9.jpg">
+            <div class="absolute w-full flex items-center px-5 pt-6 z-10">
+                <div class="w-10 h-10 flex-none image-fit">
+                    <img alt="Tinker Tailwind HTML Admin Template" class="rounded-full" src="/dist/images/profile-13.jpg">
+                </div>
+                <div class="ml-3 text-white mr-auto">
+                    <a href="" class="font-medium">Denzel Washington</a>
+                    <div class="text-xs mt-0.5">50 seconds ago</div>
+                </div>
+                <div class="dropdown ml-3">
+                    <a href="javascript:;" class="blog__action dropdown-toggle w-8 h-8 flex items-center justify-center rounded-full" aria-expanded="false"> <i data-feather="more-vertical" class="w-4 h-4 text-white"></i> </a>
+                    <div class="dropdown-menu w-40">
+                        <div class="dropdown-menu__content box dark:bg-dark-1 p-2">
+                            <a href="" class="flex items-center block p-2 transition duration-300 ease-in-out bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md"> <i data-feather="edit-2" class="w-4 h-4 mr-2"></i> Edit Post </a>
+                            <a href="" class="flex items-center block p-2 transition duration-300 ease-in-out bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md"> <i data-feather="trash" class="w-4 h-4 mr-2"></i> Delete Post </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="absolute bottom-0 text-white px-5 pb-6 z-10"> <span class="blog__category px-2 py-1 rounded">Sport &amp; Outdoor</span> <a href="" class="block font-medium text-xl mt-3">Popularised in the 1960s with the release of Letraset</a> </div>
+        </div>
+        <div class="p-5 text-gray-700 dark:text-gray-600">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 20</div>
+        <div class="flex items-center px-5 py-3 border-t border-gray-200 dark:border-dark-5">
+            <a href="" class="intro-x w-8 h-8 flex items-center justify-center rounded-full border border-gray-400 dark:border-dark-5 dark:bg-dark-5 dark:text-gray-300 text-gray-600 mr-2 tooltip" title="Bookmark"> <i data-feather="bookmark" class="w-3 h-3"></i> </a>
+            <div class="intro-x flex mr-2">
+                <div class="intro-x w-8 h-8 image-fit">
+                    <img alt="Tinker Tailwind HTML Admin Template" class="rounded-full border border-white zoom-in tooltip" src="/dist/images/profile-13.jpg" title="Denzel Washington">
+                </div>
+                <div class="intro-x w-8 h-8 image-fit -ml-4">
+                    <img alt="Tinker Tailwind HTML Admin Template" class="rounded-full border border-white zoom-in tooltip" src="/dist/images/profile-2.jpg" title="Arnold Schwarzenegger">
+                </div>
+                <div class="intro-x w-8 h-8 image-fit -ml-4">
+                    <img alt="Tinker Tailwind HTML Admin Template" class="rounded-full border border-white zoom-in tooltip" src="/dist/images/profile-13.jpg" title="Edward Norton">
+                </div>
+            </div>
+            <a href="" class="intro-x w-8 h-8 flex items-center justify-center rounded-full bg-theme-19 dark:bg-dark-5 dark:text-gray-300 text-theme-22 ml-auto tooltip" title="Share"> <i data-feather="share-2" class="w-3 h-3"></i> </a>
+            <a href="" class="intro-x w-8 h-8 flex items-center justify-center rounded-full bg-theme-25 text-white ml-2 tooltip" title="Download PDF"> <i data-feather="share" class="w-3 h-3"></i> </a>
+        </div>
+        <div class="px-5 pt-3 pb-5 border-t border-gray-200 dark:border-dark-5">
+            <div class="w-full flex text-gray-600 text-xs sm:text-sm">
+                <div class="mr-2"> Comments: <span class="font-medium">34</span> </div>
+                <div class="mr-2"> Views: <span class="font-medium">30k</span> </div>
+                <div class="ml-auto"> Likes: <span class="font-medium">120k</span> </div>
+            </div>
+            <div class="w-full flex items-center mt-3">
+                <div class="w-8 h-8 flex-none image-fit mr-3">
+                    <img alt="Tinker Tailwind HTML Admin Template" class="rounded-full" src="/dist/images/profile-13.jpg">
+                </div>
+                <div class="flex-1 relative text-gray-700 dark:text-gray-300">
+                    <input type="text" class="form-control form-control-rounded border-transparent bg-gray-200 pr-10 placeholder-theme-13" placeholder="Post a comment...">
+                    <i data-feather="smile" class="w-4 h-4 absolute my-auto inset-y-0 mr-3 right-0"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="intro-y blog col-span-12 md:col-span-6 box">
+        <div class="blog__preview image-fit">
+            <img alt="Tinker Tailwind HTML Admin Template" class="rounded-t-md" src="/dist/images/preview-10.jpg">
+            <div class="absolute w-full flex items-center px-5 pt-6 z-10">
+                <div class="w-10 h-10 flex-none image-fit">
+                    <img alt="Tinker Tailwind HTML Admin Template" class="rounded-full" src="/dist/images/profile-10.jpg">
+                </div>
+                <div class="ml-3 text-white mr-auto">
+                    <a href="" class="font-medium">Tom Cruise</a>
+                    <div class="text-xs mt-0.5">60 seconds ago</div>
+                </div>
+                <div class="dropdown ml-3">
+                    <a href="javascript:;" class="blog__action dropdown-toggle w-8 h-8 flex items-center justify-center rounded-full" aria-expanded="false"> <i data-feather="more-vertical" class="w-4 h-4 text-white"></i> </a>
+                    <div class="dropdown-menu w-40">
+                        <div class="dropdown-menu__content box dark:bg-dark-1 p-2">
+                            <a href="" class="flex items-center block p-2 transition duration-300 ease-in-out bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md"> <i data-feather="edit-2" class="w-4 h-4 mr-2"></i> Edit Post </a>
+                            <a href="" class="flex items-center block p-2 transition duration-300 ease-in-out bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md"> <i data-feather="trash" class="w-4 h-4 mr-2"></i> Delete Post </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="absolute bottom-0 text-white px-5 pb-6 z-10"> <span class="blog__category px-2 py-1 rounded">Smartphone &amp; Tablet</span> <a href="" class="block font-medium text-xl mt-3">Popularised in the 1960s with the release of Letraset</a> </div>
+        </div>
+        <div class="p-5 text-gray-700 dark:text-gray-600">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 20</div>
+        <div class="flex items-center px-5 py-3 border-t border-gray-200 dark:border-dark-5">
+            <a href="" class="intro-x w-8 h-8 flex items-center justify-center rounded-full border border-gray-400 dark:border-dark-5 dark:bg-dark-5 dark:text-gray-300 text-gray-600 mr-2 tooltip" title="Bookmark"> <i data-feather="bookmark" class="w-3 h-3"></i> </a>
+            <div class="intro-x flex mr-2">
+                <div class="intro-x w-8 h-8 image-fit">
+                    <img alt="Tinker Tailwind HTML Admin Template" class="rounded-full border border-white zoom-in tooltip" src="/dist/images/profile-10.jpg" title="Tom Cruise">
+                </div>
+                <div class="intro-x w-8 h-8 image-fit -ml-4">
+                    <img alt="Tinker Tailwind HTML Admin Template" class="rounded-full border border-white zoom-in tooltip" src="/dist/images/profile-6.jpg" title="Matt Damon">
+                </div>
+                <div class="intro-x w-8 h-8 image-fit -ml-4">
+                    <img alt="Tinker Tailwind HTML Admin Template" class="rounded-full border border-white zoom-in tooltip" src="/dist/images/profile-14.jpg" title="Richard Gere">
+                </div>
+            </div>
+            <a href="" class="intro-x w-8 h-8 flex items-center justify-center rounded-full bg-theme-19 dark:bg-dark-5 dark:text-gray-300 text-theme-22 ml-auto tooltip" title="Share"> <i data-feather="share-2" class="w-3 h-3"></i> </a>
+            <a href="" class="intro-x w-8 h-8 flex items-center justify-center rounded-full bg-theme-25 text-white ml-2 tooltip" title="Download PDF"> <i data-feather="share" class="w-3 h-3"></i> </a>
+        </div>
+        <div class="px-5 pt-3 pb-5 border-t border-gray-200 dark:border-dark-5">
+            <div class="w-full flex text-gray-600 text-xs sm:text-sm">
+                <div class="mr-2"> Comments: <span class="font-medium">81</span> </div>
+                <div class="mr-2"> Views: <span class="font-medium">42k</span> </div>
+                <div class="ml-auto"> Likes: <span class="font-medium">72k</span> </div>
+            </div>
+            <div class="w-full flex items-center mt-3">
+                <div class="w-8 h-8 flex-none image-fit mr-3">
+                    <img alt="Tinker Tailwind HTML Admin Template" class="rounded-full" src="/dist/images/profile-10.jpg">
+                </div>
+                <div class="flex-1 relative text-gray-700 dark:text-gray-300">
+                    <input type="text" class="form-control form-control-rounded border-transparent bg-gray-200 pr-10 placeholder-theme-13" placeholder="Post a comment...">
+                    <i data-feather="smile" class="w-4 h-4 absolute my-auto inset-y-0 mr-3 right-0"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="intro-y blog col-span-12 md:col-span-6 box">
+        <div class="blog__preview image-fit">
+            <img alt="Tinker Tailwind HTML Admin Template" class="rounded-t-md" src="/dist/images/preview-6.jpg">
+            <div class="absolute w-full flex items-center px-5 pt-6 z-10">
+                <div class="w-10 h-10 flex-none image-fit">
+                    <img alt="Tinker Tailwind HTML Admin Template" class="rounded-full" src="/dist/images/profile-2.jpg">
+                </div>
+                <div class="ml-3 text-white mr-auto">
+                    <a href="" class="font-medium">Leonardo DiCaprio</a>
+                    <div class="text-xs mt-0.5">18 seconds ago</div>
+                </div>
+                <div class="dropdown ml-3">
+                    <a href="javascript:;" class="blog__action dropdown-toggle w-8 h-8 flex items-center justify-center rounded-full" aria-expanded="false"> <i data-feather="more-vertical" class="w-4 h-4 text-white"></i> </a>
+                    <div class="dropdown-menu w-40">
+                        <div class="dropdown-menu__content box dark:bg-dark-1 p-2">
+                            <a href="" class="flex items-center block p-2 transition duration-300 ease-in-out bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md"> <i data-feather="edit-2" class="w-4 h-4 mr-2"></i> Edit Post </a>
+                            <a href="" class="flex items-center block p-2 transition duration-300 ease-in-out bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md"> <i data-feather="trash" class="w-4 h-4 mr-2"></i> Delete Post </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="absolute bottom-0 text-white px-5 pb-6 z-10"> <span class="blog__category px-2 py-1 rounded">Sport &amp; Outdoor</span> <a href="" class="block font-medium text-xl mt-3">Desktop publishing software like Aldus PageMaker</a> </div>
+        </div>
+        <div class="p-5 text-gray-700 dark:text-gray-600">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#039;s standard dummy text ever since the 1500</div>
+        <div class="flex items-center px-5 py-3 border-t border-gray-200 dark:border-dark-5">
+            <a href="" class="intro-x w-8 h-8 flex items-center justify-center rounded-full border border-gray-400 dark:border-dark-5 dark:bg-dark-5 dark:text-gray-300 text-gray-600 mr-2 tooltip" title="Bookmark"> <i data-feather="bookmark" class="w-3 h-3"></i> </a>
+            <div class="intro-x flex mr-2">
+                <div class="intro-x w-8 h-8 image-fit">
+                    <img alt="Tinker Tailwind HTML Admin Template" class="rounded-full border border-white zoom-in tooltip" src="/dist/images/profile-2.jpg" title="Leonardo DiCaprio">
+                </div>
+                <div class="intro-x w-8 h-8 image-fit -ml-4">
+                    <img alt="Tinker Tailwind HTML Admin Template" class="rounded-full border border-white zoom-in tooltip" src="/dist/images/profile-6.jpg" title="Edward Norton">
+                </div>
+                <div class="intro-x w-8 h-8 image-fit -ml-4">
+                    <img alt="Tinker Tailwind HTML Admin Template" class="rounded-full border border-white zoom-in tooltip" src="/dist/images/profile-2.jpg" title="Keira Knightley">
+                </div>
+            </div>
+            <a href="" class="intro-x w-8 h-8 flex items-center justify-center rounded-full bg-theme-19 dark:bg-dark-5 dark:text-gray-300 text-theme-22 ml-auto tooltip" title="Share"> <i data-feather="share-2" class="w-3 h-3"></i> </a>
+            <a href="" class="intro-x w-8 h-8 flex items-center justify-center rounded-full bg-theme-25 text-white ml-2 tooltip" title="Download PDF"> <i data-feather="share" class="w-3 h-3"></i> </a>
+        </div>
+        <div class="px-5 pt-3 pb-5 border-t border-gray-200 dark:border-dark-5">
+            <div class="w-full flex text-gray-600 text-xs sm:text-sm">
+                <div class="mr-2"> Comments: <span class="font-medium">45</span> </div>
+                <div class="mr-2"> Views: <span class="font-medium">133k</span> </div>
+                <div class="ml-auto"> Likes: <span class="font-medium">26k</span> </div>
+            </div>
+            <div class="w-full flex items-center mt-3">
+                <div class="w-8 h-8 flex-none image-fit mr-3">
+                    <img alt="Tinker Tailwind HTML Admin Template" class="rounded-full" src="/dist/images/profile-2.jpg">
+                </div>
+                <div class="flex-1 relative text-gray-700 dark:text-gray-300">
+                    <input type="text" class="form-control form-control-rounded border-transparent bg-gray-200 pr-10 placeholder-theme-13" placeholder="Post a comment...">
+                    <i data-feather="smile" class="w-4 h-4 absolute my-auto inset-y-0 mr-3 right-0"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END: Blog Layout -->
+    <!-- BEGIN: Pagiantion -->
+    <div class="intro-y col-span-12 flex flex-wrap sm:flex-row sm:flex-nowrap items-center">
+        <ul class="pagination">
+            <li>
+                <a class="pagination__link" href=""> <i class="w-4 h-4" data-feather="chevrons-left"></i> </a>
+            </li>
+            <li>
+                <a class="pagination__link" href=""> <i class="w-4 h-4" data-feather="chevron-left"></i> </a>
+            </li>
+            <li> <a class="pagination__link" href="">...</a> </li>
+            <li> <a class="pagination__link" href="">1</a> </li>
+            <li> <a class="pagination__link pagination__link--active" href="">2</a> </li>
+            <li> <a class="pagination__link" href="">3</a> </li>
+            <li> <a class="pagination__link" href="">...</a> </li>
+            <li>
+                <a class="pagination__link" href=""> <i class="w-4 h-4" data-feather="chevron-right"></i> </a>
+            </li>
+            <li>
+                <a class="pagination__link" href=""> <i class="w-4 h-4" data-feather="chevrons-right"></i> </a>
+            </li>
+        </ul>
+        <select class="w-20 form-select box mt-3 sm:mt-0">
+            <option>10</option>
+            <option>25</option>
+            <option>35</option>
+            <option>50</option>
+        </select>
+    </div>
+    <!-- END: Pagiantion -->
+</div>

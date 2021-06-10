@@ -1,0 +1,101 @@
+<% const bar = locals.theme.typeMenu === 'top' ? 'top' : 'side'; %>
+
+<nav class="<%= bar + '-nav' %>  <%= (locals.theme.typeMenu === 'simple') ? 'side-nav--simple' : '' %>">
+    <% if(bar !== 'top') { %>
+        <a href="/" class="intro-x flex items-center pl-5 pt-4 mt-3">
+            <img alt="<%= locals.theme.company %>" class="w-6" src="/dist/images/logo.svg">
+            <% if(locals.theme.typeMenu !== 'simple') { %>
+                <span class="hidden xl:block text-white text-lg ml-3"> <%= locals.theme.company %> </span>
+            <% } %>
+        </a>
+        <div class="side-nav__devider my-6"></div>
+        <!--menu-->
+    <% } %>
+    <ul>
+        <!--        cargar lista de menu from json SideBar-->
+        <% locals.sidebar.forEach(function(el, index) {
+            const is_active = ((el.link ? el.link.href : '') === '/' + locals.activeMenu.split('/')[1]);
+            const href = el.link ? el.link.href : ''
+        %>
+        <!--Primer nivel de link-->
+        <li class="<%= el.class_name %>">
+            <% if(el.is_heading) { %>
+              <a  class="text-gray-600 font-medium leading-none mt-3"><%= el.title %></a>
+            <% } %>
+            <% if(!el.is_heading) { %>
+                <a href="<%= el.children ? 'javascript:;' : href %> "
+                   class="<%= bar + '-menu' %> <%= (is_active) ? bar + '-menu--active' : '' %>">
+                    <% if(el.icon) { %>
+                        <div class="<%= bar + '-menu__icon' %>">
+                            <% if(el.icon) { %>
+                                <i data-feather="<%= el.icon %>"></i>
+                            <% } else { %>
+                                <i data-feather="activity"></i>
+                            <% } %>
+                        </div>
+                    <% } %>
+                    <div class="<%= bar + '-menu__title' %>">
+                        <%= el.title %>
+                        <% if (el.children) { %>
+                            <div class="<%= (is_active) ? bar + '-menu__sub-icon transform rotate-180' : bar + '-menu__sub-icon' %>">
+                                <i data-feather="chevron-down"></i></div>
+                        <% } %>
+                    </div>
+                </a>
+                <!--segun nivel-->
+                <% if (el.children) { %>
+                    <ul class="<%= is_active ? bar + '-menu__sub-open' : '' %>">
+                        <% el.children.forEach(function(el2) {
+                            const is_activeSub = ((el2.link ? el2.link.href : '') === '/' + locals.activeMenu.split('/')[1]+'/' + locals.activeMenu.split('/')[2]);
+                            const href2 = el2.link ? el2.link.href : ''
+                        %>
+                        <li>
+                            <a href="<%= el2.children ? 'javascript:;' : href2 %> "
+                               class="<%= bar + '-menu' %> <%= is_activeSub ? bar + '-menu--active' : '' %>">
+                                <div class="<%= bar + '-menu__icon' %>">
+                                    <% if(el2.icon) { %>
+                                        <i data-feather="<%= el2.icon %>"></i>
+                                    <% } else { %>
+                                        <i data-feather="activity"></i>
+                                    <% } %>
+                                </div>
+                                <div class="<%= bar + '-menu__title' %>">
+                                    <%= el2.title %>
+                                    <% if (el2.children) { %>
+                                        <div class="<%= is_activeSub ? bar + '-menu__sub-icon transform rotate-180' : bar + '-menu__sub-icon' %>">
+                                            <i data-feather="chevron-down"></i></div>
+                                    <% } %>
+                                </div>
+                            </a>
+                            <!--tercer nivel-->
+                            <% if (el2.children) { %>
+                                <ul class="<%= is_activeSub ? bar + '-menu__sub-open' : '' %>">
+                                    <% el2.children.forEach(function(el3) {
+                                        const is_activeSub2 = ((el3.link ? el3.link.href : '') ===  locals.activeMenu);
+                                        const href3 = el3.link ? el3.link.href : ''
+                                    %>
+                                    <li>
+                                        <a href="<%= el3.children ? 'javascript:;' : href3 %> "
+                                           class="<%= bar + '-menu' %> <%= is_activeSub2 ? bar + '-menu--active' : '' %>">
+                                            <div class="<%= bar + '-menu__icon' %>">
+                                                <% if(el3.icon) { %>
+                                                <i data-feather="<%= el3.icon %>"></i>
+                                                <% } else { %>
+                                                        <i data-feather="activity"></i>
+                                                <% } %>
+                                            </div>
+                                            <div class="<%= bar + '-menu__title' %>"> <%= el3.title %> </div>
+                                        </a>
+                                    </li>
+                                    <% }) %>
+                                </ul>
+                            <% } %>
+                        </li>
+                        <% }) %>
+                    </ul>
+                <% } %>
+            <% } %>
+        </li>
+        <% }); %>
+    </ul>
+</nav>

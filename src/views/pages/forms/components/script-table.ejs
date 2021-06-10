@@ -1,0 +1,230 @@
+<script>
+
+  (function(cash) {
+    "use strict";
+    var tabledata =<%- JSON.stringify(tableData) %> ;
+// var tabledata = [
+//   {id:1, name:"Oli Bob", location:"United Kingdom", gender:"male", rating:1, col:"red", dob:"14/04/1984"},
+//   {id:2, name:"Mary May", location:"Germany", gender:"female", rating:2, col:"blue", dob:"14/05/1982"},
+//   {id:3, name:"Christine Lobowski", location:"France", gender:"female", rating:0, col:"green", dob:"22/05/1982"},
+//   {id:4, name:"Brendon Philips", location:"USA", gender:"male", rating:1, col:"orange", dob:"01/08/1980"},
+//   {id:5, name:"Margret Marmajuke", location:"Canada", gender:"female", rating:5, col:"yellow", dob:"31/01/1999"},
+//   {id:6, name:"Frank Harbours", location:"Russia", gender:"male", rating:4, col:"red", dob:"12/05/1966"},
+//   {id:7, name:"Jamie Newhart", location:"India", gender:"male", rating:3, col:"green", dob:"14/05/1985"},
+//   {id:8, name:"Gemma Jane", location:"China", gender:"female", rating:0, col:"red", dob:"22/05/1982"},
+//   {id:9, name:"Emily Sykes", location:"South Korea", gender:"female", rating:1, col:"maroon", dob:"11/11/1970"},
+//   {id:10, name:"James Newman", location:"Japan", gender:"male", rating:5, col:"red", dob:"22/03/1998"},
+//   {id:11, name:"James Newman", location:"Japan", gender:"male", rating:5, col:"red", dob:"22/03/1998"},
+// ];
+
+    const getColumn = (array) => {
+      let columns = [];
+      // console.log(array.length)
+      if (array.length === 0) {
+        columns.push({
+          title: "Sin registros",
+          minWidth: 50,
+          responsive: 1,
+          // headerFilter: true, headerFilterPlaceholder: "Buscar...",
+          field: "",
+          vertAlign: "middle",
+          hozAlign: "center",
+          print: false,
+          download: false,
+          formatter(cell, formatterParams) {
+            return `<div>
+                            <div class="text-sm  antialiased whitespace-nowrap">${
+              cell.getValue()
+            }</div>
+
+                        </div>`;
+          }
+        });
+        return columns;
+      }
+
+      const keys = Object.keys(array[0]);
+      columns.push({
+        formatter: "responsiveCollapse",
+        width: 40,
+        minWidth: 30,
+        hozAlign: "center",
+        resizable: false,
+        headerSort: false
+      });
+
+      keys.map(value => {
+          cash("#tabulator-html-filter-field").append(`<option value="${value}">${value.charAt(0).toUpperCase() + value.slice(1)}</option>`);
+          // html
+          columns.push({
+            title: value.charAt(0).toUpperCase() + value.slice(1),
+            minWidth: 50,
+            responsive: 1,
+            // headerFilter: true, headerFilterPlaceholder: "Buscar...",
+            field: value,
+            vertAlign: "middle",
+            hozAlign: "center",
+            print: false,
+            download: false,
+            formatter(cell, formatterParams) {
+              return `<div>
+                            <div class="text-sm  antialiased whitespace-nowrap">${
+                cell.getValue()
+              }</div>
+
+                        </div>`;
+            }
+          });
+          // print
+          columns.push({
+            title: value.charAt(0).toUpperCase() + value.slice(1),
+            field: value,
+            visible: false,
+            print: true,
+            download: true
+          });
+        }
+      );
+      //actions
+      columns.push({
+        title: "Acciones",
+        width: 130,
+        // minWidth: 50,
+        field: "actions",
+        responsive: 0,
+        hozAlign: "center",
+        vertAlign: "middle",
+        print: false,
+        download: false,
+        formatter(cell, formatterParams) {
+          let a = cash(`<div class="flex lg:justify-center items-center dropdown">
+                    <a class="dropdown-toggle w-5 h-5 block" href="javascript:;" aria-expanded="false">
+                      <svg class="w-5 h-5 text-gray-600 dark:text-gray-400" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="#626262" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></g></svg>
+                    </a>
+                    <div class="dropdown-menu w-56">
+                        <div class="dropdown-menu__content box dark:bg-dark-1">
+                            <div class="p-4 border-b border-gray-200 dark:border-dark-5 font-medium">Acciones</div>
+                            <div class="p-2">
+                                <a href="" class="flex items-center block p-2 transition duration-300 ease-in-out bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md">
+<svg class="w-4 h-4 text-gray-700 dark:text-gray-300 mr-2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none"><path d="M16.474 5.408l2.118 2.117m-.756-3.982L12.109 9.27a2.118 2.118 0 0 0-.58 1.082L11 13l2.648-.53c.41-.082.786-.283 1.082-.579l5.727-5.727a1.853 1.853 0 1 0-2.621-2.621z" stroke="#626262" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 15v3a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h3" stroke="#626262" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g></svg>
+Editar </a>
+                                <a href="" class="flex delete  text-theme-21 items-center block p-2 transition duration-300 ease-in-out bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md">
+<svg class="w-4 h-4 text-gray-700 dark:text-gray-300 mr-2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="none" d="M17.004 20l-.001-12h-10v12h10.001zm-4.001-10h2v8h-2v-8zm-4 0h2v8h-2v-8zm0-6h6v2h-6z"/><path d="M5.003 20c0 1.103.897 2 2 2h10c1.103 0 2-.897 2-2V8h2V6h-4V4c0-1.103-.897-2-2-2h-6c-1.103 0-2 .897-2 2v2h-4v2h2v12zm4-16h6v2h-6V4zm-1 4h9l.001 12H7.003V8h1z" fill="#626262"/><path d="M9.003 10h2v8h-2zm4 0h2v8h-2z" fill="#626262"/></svg>Eliminar </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>`);
+          cash(a)
+            .find(".edit")
+            .on("click", function() {
+              alert("EDIT");
+            });
+
+          cash(a)
+            .find(".delete")
+            .on("click", function() {
+              alert("DELETE");
+            });
+
+          return a[0];
+        }
+      });
+
+      return columns;
+    };
+
+//define table
+    console.log(getColumn(tabledata));
+    var table = new Tabulator("#renderTable", {
+      data: tabledata,
+      index: "id",
+      printAsHtml: true,
+      printStyled: true,
+      pagination: "local",
+      paginationSize: 10,
+      paginationSizeSelector: [10, 20, 30, 40],
+      layout: "fitColumns",
+      responsiveLayout: "collapse",
+      responsiveLayoutCollapseStartOpen: false,
+      placeholder: "No matching records found",
+      // autoColumns:true,
+      columns: getColumn(tabledata)
+
+    });
+
+    // Redraw table onresize
+    window.addEventListener("resize", () => {
+      table.redraw();
+    });
+
+    // Filter function
+    function filterHTMLForm() {
+      let field = cash("#tabulator-html-filter-field").val();
+      let type = cash("#tabulator-html-filter-type").val();
+      let value = cash("#tabulator-html-filter-value").val();
+      table.setFilter(field, type, value);
+    }
+
+    // On submit filter form
+    cash("#tabulator-html-filter-form")[0].addEventListener(
+      "keypress",
+      function(event) {
+        let keycode = event.keyCode ? event.keyCode : event.which;
+        if (keycode == "13") {
+          event.preventDefault();
+          filterHTMLForm();
+        }
+      }
+    );
+
+    // On click go button
+    cash("#tabulator-html-filter-go").on("click", function(event) {
+      filterHTMLForm();
+    });
+
+    // On reset filter form
+    cash("#tabulator-html-filter-reset").on("click", function(event) {
+      cash("#tabulator-html-filter-field").val("name");
+      cash("#tabulator-html-filter-type").val("like");
+      cash("#tabulator-html-filter-value").val("");
+      filterHTMLForm();
+    });
+
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, "0");
+    var mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
+    var yyyy = today.getFullYear();
+
+    today = yyyy + mm + dd;
+    // Export
+    cash("#tabulator-export-csv").on("click", function(event) {
+      table.download("csv", "Form " + today + ".csv");
+    });
+
+    cash("#tabulator-export-json").on("click", function(event) {
+      table.download("json", "Form " + today + ".json");
+    });
+
+    cash("#tabulator-export-xlsx").on("click", function(event) {
+      // window.XLSX = xlsx;
+      table.download("xlsx", "Form " + today + ".xlsx", {
+        sheetName: "Hoja1"
+      });
+    });
+
+    cash("#tabulator-export-html").on("click", function(event) {
+      table.download("html", "Form " + today + ".html", {
+        style: true
+      });
+    });
+
+    // Print
+    cash("#tabulator-print").on("click", function(event) {
+      table.print();
+    });
+
+  })(cash);
+
+  //load sample data into the table
+  // table.setData(tabledata);
+</script>

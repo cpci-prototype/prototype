@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" class="<%= locals.theme.mode %>">
+<!-- BEGIN: Head -->
+<head>
+  <meta charset="utf-8">
+  <link href="/dist/images/logo.svg" rel="shortcut icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="APP Prototype for CPCI">
+  <meta name="keywords" content="web app">
+  <meta name="author" content="CPCI">
+  <title>Login - Prototype</title>
+  <!-- BEGIN: CSS Assets-->
+  <link rel="stylesheet" href="/dist/css/app.css" />
+  <!-- END: CSS Assets-->
+</head>
+<!-- END: Head -->
+<body class="login">
+<div class="container sm:px-10">
+  <%- body %>
+</div>
+
+<!-- BEGIN: Dark Mode Switcher-->
+<%- include('../dark-switcher') %>
+<!-- END: Dark Mode Switcher-->
+<!-- BEGIN: JS Assets-->
+<%- include('../scripts') %>
+<!-- END: JS Assets-->
+</body>
+
+</html>

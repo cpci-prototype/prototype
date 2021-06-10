@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" class="<%= locals.theme.mode %>">
+<!-- BEGIN: Head -->
+<head>
+  <meta charset="utf-8">
+  <link href="/dist/images/logo.svg" rel="shortcut icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="APP Prototype for CPCI">
+  <meta name="keywords" content="web app">
+  <meta name="author" content="CPCI">
+  <title>Prototype</title>
+  <%- include('./partials/scripts') %>
+</head>
+<!-- END: Head -->
+<body class="main">
+<!-- BEGIN: Mobile Menu -->
+<%- include('./partials/sidebar/mobile-menu') %>
+<!-- END: Mobile Menu -->
+
+<!--TOPBAR-->
+<% if(locals.theme.typeMenu === 'top') { %>
+  <%- include('./partials/header/navbar') %>
+  <%- include('./partials/sidebar/sidebar') %>
+<% } %>
+<!--END: TOPBAR-->
+<div class="<%= locals.theme.typeMenu !== 'top' ? 'flex overflow-hidden' : '' %>">
+  <!-- BEGIN: Side Menu -->
+  <% if(locals.theme.typeMenu !== 'top') { %>
+    <%- include('./partials/sidebar/sidebar') %>
+  <% } %>
+
+  <!-- END: Side Menu -->
+  <!-- BEGIN: Content -->
+  <div class="content <%= locals.theme.typeMenu === 'top' ? 'content--top-nav' : '' %>">
+    <!-- BEGIN: Top Bar -->
+    <% if(locals.theme.typeMenu !== 'top') { %>
+      <%- include('./partials/header/navbar') %>
+    <% } %>
+    <!-- END: Top Bar -->
+    <%- body %>
+  </div>
+  <!-- END: Content -->
+</div>
+<!-- BEGIN: Dark Mode Switcher-->
+<%- include('./partials/dark-switcher') %>
+<!-- END: Dark Mode Switcher-->
+</body>
+
+</html>
