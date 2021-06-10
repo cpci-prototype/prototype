@@ -27,7 +27,7 @@ app.use('/', routes)
 /// catch 404 and forward to error handler
 app.use(middlewares.error)
 
-console.log("hola mundos")
+console.log("hola mundoswewe")
 
 // port
 sequelize
