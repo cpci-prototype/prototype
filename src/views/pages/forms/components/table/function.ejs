@@ -93,11 +93,11 @@
                         <div class="dropdown-menu__content box dark:bg-dark-1">
                             <div class="p-4 border-b border-gray-200 dark:border-dark-5 font-medium">Acciones</div>
                             <div class="p-2">
-                                <a href="${lastItem.url}/${cell.getData().id}" class="flex items-center block p-2 transition duration-300 ease-in-out bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md">
+                                <a href="javascript:;" class="edit flex items-center block p-2 transition duration-300 ease-in-out bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md">
                                     <svg class="w-4 h-4 text-gray-700 dark:text-gray-300 mr-2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none"><path d="M16.474 5.408l2.118 2.117m-.756-3.982L12.109 9.27a2.118 2.118 0 0 0-.58 1.082L11 13l2.648-.53c.41-.082.786-.283 1.082-.579l5.727-5.727a1.853 1.853 0 1 0-2.621-2.621z" stroke="#626262" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 15v3a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h3" stroke="#626262" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g></svg>
                                     Editar
                                     </a>
-                                <a href="" class="flex delete  text-theme-21 items-center block p-2 transition duration-300 ease-in-out bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md">
+                                <a href="javascript:;" class="flex delete  text-theme-21 items-center block p-2 transition duration-300 ease-in-out bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md">
                                     <svg class="w-4 h-4 text-gray-700 dark:text-gray-300 mr-2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="none" d="M17.004 20l-.001-12h-10v12h10.001zm-4.001-10h2v8h-2v-8zm-4 0h2v8h-2v-8zm0-6h6v2h-6z"/><path d="M5.003 20c0 1.103.897 2 2 2h10c1.103 0 2-.897 2-2V8h2V6h-4V4c0-1.103-.897-2-2-2h-6c-1.103 0-2 .897-2 2v2h-4v2h2v12zm4-16h6v2h-6V4zm-1 4h9l.001 12H7.003V8h1z" fill="#626262"/><path d="M9.003 10h2v8h-2zm4 0h2v8h-2z" fill="#626262"/></svg>Eliminar </a>
                             </div>
                         </div>
@@ -106,7 +106,19 @@
                     cash(a)
                         .find(".edit")
                         .on("click", function () {
-                            alert("EDIT");
+                          axios.get(lastItem.url+'/'+cell.getData().id)
+                            .then(function (response) {
+                              // handle success
+                              console.log(response);
+                            })
+                            .catch(function (error) {
+                              // handle error
+                              console.log(error);
+                            })
+                            .then(function () {
+                              // always executed
+                            });
+                            // alert("EDIT");
                         });
 
                     cash(a)

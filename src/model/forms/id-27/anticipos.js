@@ -1,7 +1,7 @@
 'use strict'
 
 module.exports = (sequelize, DataTypes) => {
-    const Anticipos = sequelize.define(
+    const model = sequelize.define(
         'id27_anticipos',
         {
             id: {
@@ -9,20 +9,25 @@ module.exports = (sequelize, DataTypes) => {
                 primaryKey: true,
                 autoIncrement: true,
             },
-            name: {
+            fondo: {
                 type: DataTypes.STRING,
                 required: true,
             },
-            description: {
+            nominales: {
+                type: DataTypes.DECIMAL(25, 4),
+                required: false,
+            },
+            moneda: {
                 type: DataTypes.STRING,
                 required: false,
             },
-            description2: {
-                type: DataTypes.STRING,
+
+            afp_paga: {
+                type: DataTypes.DECIMAL(25, 4),
                 required: false,
             },
-            price: {
-                type: DataTypes.FLOAT,
+            afp_recibe: {
+                type: DataTypes.DECIMAL(25, 4),
                 required: false,
             },
         },
@@ -31,5 +36,5 @@ module.exports = (sequelize, DataTypes) => {
         }
     )
 
-    return Anticipos
+    return model
 }

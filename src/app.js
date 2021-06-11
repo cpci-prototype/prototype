@@ -29,7 +29,7 @@ app.use(middlewares.error)
 
 // port
 sequelize
-    .sync()
+    .sync({ alter: true })
     .then(() => {
         app.listen(config.PORT, () => {
             console.log('Express listening on port:', config.PORT)
