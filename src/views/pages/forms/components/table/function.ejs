@@ -1,0 +1,124 @@
+<script>
+    const getColumn = (array) => {
+        let columns = [];
+        const currentUrl = <%- JSON.stringify(locals.breadcrumbs) %>
+        const lastItem = currentUrl[currentUrl.length - 1]
+        // console.log(lastItem)
+        if (array.length === 0) {
+            columns.push({
+                title: "Sin registros",
+                minWidth: 50,
+                responsive: 1,
+                // headerFilter: true, headerFilterPlaceholder: "Buscar...",
+                field: "",
+                vertAlign: "middle",
+                hozAlign: "center",
+                print: false,
+                download: false,
+                formatter(cell, formatterParams) {
+                    return `<div>
+                            <div class="text-sm  antialiased whitespace-nowrap">${
+                        cell.getValue()
+                    }</div>
+
+                        </div>`;
+                }
+            });
+            return columns;
+        }
+
+        const keys = Object.keys(array[0]);
+        columns.push(
+            {
+                formatter: "responsiveCollapse",
+                width: 40,
+                minWidth: 30,
+                hozAlign: "center",
+                resizable: false,
+                headerSort: false
+            });
+
+        keys.map(value => {
+                cash("#tabulator-html-filter-field")
+                    .append(`<option value="${value}">${value.charAt(0).toUpperCase() + value.slice(1)}</option>`);
+                // html
+                columns.push(
+                    {
+                        title: value.charAt(0).toUpperCase() + value.slice(1),
+                        minWidth: 50,
+                        responsive: 1,
+                        // headerFilter: true, headerFilterPlaceholder: "Buscar...",
+                        field: value,
+                        vertAlign: "middle",
+                        hozAlign: "center",
+                        print: false,
+                        download: false,
+                        formatter(cell, formatterParams) {
+                            return `<div>
+                            <div class="text-sm  antialiased whitespace-nowrap">${
+                                cell.getValue()
+                            }</div>
+
+                        </div>`;
+                        }
+                    });
+                // print
+                columns.push({
+                    title: value.charAt(0).toUpperCase() + value.slice(1),
+                    field: value,
+                    visible: false,
+                    print: true,
+                    download: true
+                });
+            }
+        );
+        //actions
+        columns.push(
+            {
+                title: "Acciones",
+                width: 130,
+                // minWidth: 50,
+                field: "actions",
+                responsive: 0,
+                hozAlign: "center",
+                vertAlign: "middle",
+                print: false,
+                download: false,
+                formatter(cell, formatterParams) {
+                    let a = cash(`<div class="flex lg:justify-center items-center dropdown">
+                    <a class="dropdown-toggle w-5 h-5 block" href="javascript:;" aria-expanded="false">
+                      <svg class="w-5 h-5 text-gray-600 dark:text-gray-400" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="#626262" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></g></svg>
+                    </a>
+                    <div class="dropdown-menu w-56">
+                        <div class="dropdown-menu__content box dark:bg-dark-1">
+                            <div class="p-4 border-b border-gray-200 dark:border-dark-5 font-medium">Acciones</div>
+                            <div class="p-2">
+                                <a href="${lastItem.url}/${cell.getData().id}" class="flex items-center block p-2 transition duration-300 ease-in-out bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md">
+                                    <svg class="w-4 h-4 text-gray-700 dark:text-gray-300 mr-2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none"><path d="M16.474 5.408l2.118 2.117m-.756-3.982L12.109 9.27a2.118 2.118 0 0 0-.58 1.082L11 13l2.648-.53c.41-.082.786-.283 1.082-.579l5.727-5.727a1.853 1.853 0 1 0-2.621-2.621z" stroke="#626262" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 15v3a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h3" stroke="#626262" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g></svg>
+                                    Editar
+                                    </a>
+                                <a href="" class="flex delete  text-theme-21 items-center block p-2 transition duration-300 ease-in-out bg-white dark:bg-dark-1 hover:bg-gray-200 dark:hover:bg-dark-2 rounded-md">
+                                    <svg class="w-4 h-4 text-gray-700 dark:text-gray-300 mr-2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path fill="none" d="M17.004 20l-.001-12h-10v12h10.001zm-4.001-10h2v8h-2v-8zm-4 0h2v8h-2v-8zm0-6h6v2h-6z"/><path d="M5.003 20c0 1.103.897 2 2 2h10c1.103 0 2-.897 2-2V8h2V6h-4V4c0-1.103-.897-2-2-2h-6c-1.103 0-2 .897-2 2v2h-4v2h2v12zm4-16h6v2h-6V4zm-1 4h9l.001 12H7.003V8h1z" fill="#626262"/><path d="M9.003 10h2v8h-2zm4 0h2v8h-2z" fill="#626262"/></svg>Eliminar </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>`);
+                    cash(a)
+                        .find(".edit")
+                        .on("click", function () {
+                            alert("EDIT");
+                        });
+
+                    cash(a)
+                        .find(".delete")
+                        .on("click", function () {
+                            alert("DELETE");
+                        });
+
+                    return a[0];
+                }
+            });
+
+        return columns;
+    };
+</script>
