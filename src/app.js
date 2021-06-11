@@ -27,8 +27,6 @@ app.use('/', routes)
 /// catch 404 and forward to error handler
 app.use(middlewares.error)
 
-console.log("hola mundoswewe")
-
 // port
 sequelize
     .sync()
@@ -38,13 +36,3 @@ sequelize
         })
     })
     .catch((error) => console.log(error))
-
-// const up = function (queryInterface, Sequelize) {
-//     // logic for transforming into the new state
-//     return queryInterface.addColumn(
-//         '27_anticipos',
-//         'completed2',
-//         Sequelize.BOOLEAN
-//     )
-// }
-// up(db.queryInterface, db.DataTypes)
