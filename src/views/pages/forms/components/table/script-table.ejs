@@ -1,0 +1,100 @@
+<!--include file function getColumn-->
+<%- include('function' ) %>
+<script>
+    (function (cash) {
+        "use strict";
+        var tabledata = <%- JSON.stringify(tableData) %> ;
+
+        var table = new Tabulator("#renderTable", {
+            data: tabledata,
+            index: "id",
+            printAsHtml: true,
+            printStyled: true,
+            pagination: "local",
+            paginationSize: 10,
+            paginationSizeSelector: [10, 20, 30, 40],
+            layout: "fitColumns",
+            responsiveLayout: "collapse",
+            responsiveLayoutCollapseStartOpen: false,
+            placeholder: "No matching records found",
+            // autoColumns:true,
+            columns: getColumn(tabledata)
+
+        });
+
+        // Redraw table onresize
+        window.addEventListener("resize", () => {
+            table.redraw();
+        });
+
+        // Filter function
+        function filterHTMLForm() {
+            let field = cash("#tabulator-html-filter-field").val();
+            let type = cash("#tabulator-html-filter-type").val();
+            let value = cash("#tabulator-html-filter-value").val();
+            table.setFilter(field, type, value);
+        }
+
+        // On submit filter form
+        cash("#tabulator-html-filter-form")[0].addEventListener(
+            "keypress",
+            function (event) {
+                let keycode = event.keyCode ? event.keyCode : event.which;
+                if (keycode == "13") {
+                    event.preventDefault();
+                    filterHTMLForm();
+                }
+            }
+        );
+
+        // On click go button
+        cash("#tabulator-html-filter-go").on("click", function (event) {
+            filterHTMLForm();
+        });
+
+        // On reset filter form
+        cash("#tabulator-html-filter-reset").on("click", function (event) {
+            cash("#tabulator-html-filter-field").val("name");
+            cash("#tabulator-html-filter-type").val("like");
+            cash("#tabulator-html-filter-value").val("");
+            filterHTMLForm();
+        });
+
+        var today = new Date();
+        var dd = String(today.getDate()).padStart(2, "0");
+        var mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
+        var yyyy = today.getFullYear();
+
+        today = yyyy + mm + dd;
+        // Export
+        cash("#tabulator-export-csv").on("click", function (event) {
+            table.download("csv", "Form " + today + ".csv");
+        });
+
+        cash("#tabulator-export-json").on("click", function (event) {
+            table.download("json", "Form " + today + ".json");
+        });
+
+        cash("#tabulator-export-xlsx").on("click", function (event) {
+            // window.XLSX = xlsx;
+            table.download("xlsx", "Form " + today + ".xlsx", {
+                sheetName: "Hoja1"
+            });
+        });
+
+        cash("#tabulator-export-html").on("click", function (event) {
+            table.download("html", "Form " + today + ".html", {
+                style: true
+            });
+        });
+
+        // Print
+        cash("#tabulator-print").on("click", function (event) {
+            table.print();
+        });
+
+    })(cash);
+
+    //load sample data into the table
+    // table.setData(tabledata);
+</script>
