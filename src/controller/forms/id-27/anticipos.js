@@ -11,7 +11,7 @@ exports.list = (req, res) => {
 
 exports.getById = (req, res) => {
     var id = req.params.itemId
-    db.models['id27_anticipos'].findById(id).then((item) => {
+    db.models['id27_anticipos'].findByPk(id).then((item) => {
         res.json(item)
     })
 }
