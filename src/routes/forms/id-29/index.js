@@ -1,8 +1,12 @@
-const router = require("express").Router();
+const router = require('express').Router()
+const controller = require('../../../controller/forms/id-29/renta-fija')
 
 //default form
-router.get("/id-29/renta-fija", (req, res, next) => {
-    res.render("pages/forms/id29/renta-fija");
-});
+router.route('/renta-fija').get(controller.get)
+
+// router.post('/id-29/renta-fija', (req, res, next) => {
+//     console.log(req.body)
+//     res.redirect('/forms/id-29/renta-fija')
+// })
 
 module.exports = router
